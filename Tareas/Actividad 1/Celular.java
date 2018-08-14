@@ -1,5 +1,3 @@
-package Tareas.Actividad1;
-
 public class Celular {
 
     public double apertura;
