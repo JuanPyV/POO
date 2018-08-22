@@ -9,7 +9,7 @@ public class Act3{
 
     Head chompa = new Head(izq, der);
 
-    Dog dogo = new Dog(6, 4, "Pancho", chompa);
+    Dog dogo = new Dog();    
     Dog dogi = new Dog(8, 5, "Firulais", chompa);
 
     dogo.pelea(dogi);

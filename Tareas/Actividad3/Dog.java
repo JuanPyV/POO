@@ -19,7 +19,7 @@ public class Dog {
   public Dog(){
     System.out.println("Default constructor");
     strenght = 6;
-    speed = 5;
+    speed = 9;
     name = "Pancho";
     this.head = head;
     }
