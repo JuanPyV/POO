@@ -52,7 +52,21 @@ public class Clock {
   public void printTime(){
     // imprime la hora completa en un formato legible para humanos
     // ejemplo: 12:30:25
-    System.out.println(hr+":"+min+":"+sec);
+    if (hr<10){
+      System.out.print("0"+hr+":");
+    }else{
+      System.out.print(hr+":");
+    }
+    if (min<10){
+      System.out.print("0"+min+":");
+    }else{
+      System.out.print(min+":");
+    }
+    if (sec<10){
+      System.out.println("0"+sec);
+    }else{
+      System.out.println(sec);
+    }
   }
 
   public int incrementHours(){

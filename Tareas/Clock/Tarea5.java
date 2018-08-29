@@ -13,7 +13,7 @@ public class Tarea5 {
     // agregar throw / throws también a métodos donde sea necesario
 
     try{
-    Clock reloc = new Clock(23, 59, 59);
+    Clock reloc = new Clock(12, 36, 5);
     Clock reloj = new Clock();
     Clock relojCopia = new Clock();
     Clock relojSet = new Clock();
@@ -21,9 +21,9 @@ public class Tarea5 {
     System.out.println(reloc.getHours()+" horas");
     System.out.println(reloc.getMinutes()+" minutos");
     System.out.println(reloc.getSeconds()+" segundos");
-    reloc.incrementHours();
-    reloc.incrementMinutes();
-    reloc.incrementSeconds();
+    System.out.println("Ahora son : "+reloc.incrementHours()+" horas");
+    System.out.println("Ahora son: "+reloc.incrementMinutes()+" minutos");
+    System.out.println("Ahora son: "+reloc.incrementSeconds()+" segundos");
     reloc.printTime();
     reloj.printTime();
     relojCopia.copy(reloc);
