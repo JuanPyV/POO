@@ -1,3 +1,5 @@
+// Juan Pablo Velazco Velasquez
+
 public class Clock {
 
   private int hr;
