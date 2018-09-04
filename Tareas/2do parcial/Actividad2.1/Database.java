@@ -7,10 +7,10 @@ public class Database {
 		Student[] estudiantes = new Student[10];
 		boolean menu = true;
 		while(menu) {
-			int opcion = Integer.parseInt(JOptionPane.showInputDialog("Seleccione una opción \n 1.-Agregar estudiante\n 2.-Editar estudiante\n 3.-Buscar estudiante\n 4.-Borrar estudiante\n 5.-Mostrar lista\n 6.-Mostrar alumno\n 7.-Salir"));
-			
+			int opcion = Integer.parseInt(JOptionPane.showInputDialog("Seleccione una opcion\n1.-Agregar estudiante\n2.-Editar estudiante\n3.-Buscar estudiante y calificacion\n4.-Borrar estudiante\n5.-Mostrar lista\n6.-Mostrar alumno\n7.-Salir"));
+
 			switch(opcion) {
-			
+
 			case 1:
 				String name = JOptionPane.showInputDialog("Ingresa el nombre del alumno");
 				String lastName = JOptionPane.showInputDialog("Ingresa el apellido");
@@ -22,18 +22,19 @@ public class Database {
 				}else if(attendanceNum == 0) {
 					attendance = false;
 				}
-				
+
 				Student estud = new Student(name, lastName, grade, attendance);
-				if(indice < 10) {
+				if(indice == 9) {
 					indice = 0;
 				}
 				estudiantes[indice] = estud;
 				indice++;
-				
+
 				break;
+
 			case 2:
 				int index = Integer.parseInt(JOptionPane.showInputDialog("Dame el indice:"));
-				while (true) {
+				while (menu) {
 					if (index > 9) {
 						JOptionPane.showMessageDialog(null,"Numero incorrecto");
 					}else if(estudiantes[index] == null){
@@ -50,37 +51,79 @@ public class Database {
 						}else if(attendanceNumEdit == 0) {
 							attendanceEdit = false;
 						}
-						
+
 						Student estudEdit = new Student(nameEdit, lastNameEdit, gradeEdit, attendanceEdit);
 						estudiantes[index] = estudEdit;
+						menu = false;
 						break;
-						
-						
 					}
 				}
-				
 				break;
+
 			case 3:
-				break;
+				String nom = JOptionPane.showInputDialog("Dame el nombre:");
+				String ape = JOptionPane.showInputDialog("Dame el apellido");
+				boolean buscar = false;
+				int x = 0;
+					while(x < estudiantes.length) {
+					if(estudiantes[x] != null) {
+						if(estudiantes[x].getName().equals(nom) && estudiantes[x].getLastName().equals(ape)) {
+							buscar = true;
+							break;
+						}
+					}else {
+						break;
+					}
+					x++;
+				}
+
+					if(buscar) {
+						JOptionPane.showMessageDialog(null, "Calificacion: \n" + estudiantes[x].getGrade());
+					}else {
+						JOptionPane.showMessageDialog(null, "Alumno no encontrado");
+					}
+					break;
+
 			case 4:
+				int indexDel = Integer.parseInt(JOptionPane.showInputDialog("Dame el indice:"));
+				estudiantes[indexDel] = null;
+				for (int c=indexDel; c < 9; c++){
+					estudiantes[c] = estudiantes[c+1];
+				}
 				break;
-				
+
 			case 5:
+				for (int z = 0; z < estudiantes.length; z++){
+					if(estudiantes[z] != null) {
+						int asistencia = Integer.parseInt(JOptionPane.showInputDialog("Asistio "+
+								estudiantes[z].getName()+ estudiantes[z].getLastName()+" ?"));
+						if (asistencia == 1){
+							estudiantes[z].setAttendance(true);
+						}else if (asistencia == 0){
+							estudiantes[z].setAttendance(false);
+						}else{
+							JOptionPane.showMessageDialog(null, "Opcion invalida");
+						}
+					}
+				}
 				break;
+
 			case 6:
-				break;
+				for (int e = 0; e < estudiantes.length; e++){
+					if(estudiantes[e] != null) {
+					JOptionPane.showMessageDialog(null, "Nombre: "+estudiantes[e].getName()+"\n"+
+					"Apellido: "+estudiantes[e].getLastName()+"\n"+"Calificacion: "+
+					estudiantes[e].getGrade()+"\n"+"Asistencia: "+estudiantes[e].getAttendance());
+					}
+				}
+
+					break;
+
 			case 7:
 				menu = false;
 				break;
-				
-				
-				
+
 			}
-				
 		}
-		// TODO Auto-generated method stub
-
 	}
-
-
 }
