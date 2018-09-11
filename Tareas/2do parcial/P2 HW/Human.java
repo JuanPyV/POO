@@ -1,4 +1,4 @@
-public class huma{
+public class Human{
 
   protected double speed;
   protected double fuerza;
