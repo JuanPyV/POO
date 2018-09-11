@@ -2,7 +2,7 @@ public class Runner extends Human{
 
   private int numberOfMedals;
 
-  public int getNumerOfMedals(){return numberOfMedals; }
+  public int getNumberOfMedals(){return numberOfMedals;}
 
   public Runner (int numberOfMedals, double speed, double fuerza, String name){
     super(speed, fuerza, name);
@@ -11,7 +11,7 @@ public class Runner extends Human{
 
   public void run(){
     super.run();
-    System.out.println("Rapidin........")
+    System.out.println("Rapidin........");
   }
 
 }

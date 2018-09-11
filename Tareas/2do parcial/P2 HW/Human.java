@@ -10,21 +10,21 @@ public class Human{
 	public String getName() {	return name;}
 
 
-  public huma( double speed, double fuerza, String name){
+  public Human( double speed, double fuerza, String name){
     this.speed = speed;
     this.fuerza = fuerza;
     this.name = name;
   }
 
-  public static void run(){
+  public void run(){
     System.out.println("GOTTA GO FAST");
   }
 
-  public static void run(String name){
+  public void run(String name){
     System.out.println("GOTTA GO FASTER "+name);
   }
 
-  public static void run(double fuerza){
+  public void run(double fuerza){
     System.out.println("GOTTA GO FAST WITH "+fuerza+" NEWTONS ");
   }
 
