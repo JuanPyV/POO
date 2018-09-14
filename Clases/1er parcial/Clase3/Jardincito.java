@@ -1,12 +1,8 @@
-public class Jardincito{
+public class Jardincito {
 
-  /*
-  utilizar objetos / pase de parametros
-  2 categorias de tipo de datos
-  *Primitivos - son los que vienen en el lenguaje, contiene
-  un atomo de informacion, int, double, float, boolean, etc.
-  *Objetos - son referencias a un espacio de memoria
-  */
-
-
+  // utilizar objetos / pase de parámetros
+  // 2 categorías de tipos de datos
+  // - primitivos: son los que vienen en el lenguaje, contienen
+  // un átomo de información, int, double, float, boolean, etc
+  // - objetos: referencias a un espacio en memoria
 }

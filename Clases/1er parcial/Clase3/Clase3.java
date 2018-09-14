@@ -1,18 +1,18 @@
-public class Clase3{
-  public static void main(String[] args){
+public class Clase3 {
+  public static void main(String[] args) {
 
-    //new creacion del objeto, invocacion al cronstructor
+    // new creación del objeto, invocación al constructor
     int x = 2;
     int y = x;
     y = 3;
-    // los primitivos se copian la informacion
+    // los primitivos se copian la información
 
     System.out.println(x);
     System.out.println(y);
     System.out.println(x);
 
-    //¿Cual es el valor de un objeto no inicializado?
-    // es el valor es null
+    // ¿cual es el valor de un objeto no inicializado?
+    // el valor es null
     Florecita f3;
 
     Florecita f1 = new Florecita();
@@ -22,9 +22,8 @@ public class Clase3{
     System.out.println(f1.getCantidadDePetalos());
     System.out.println(f3.getCantidadDePetalos());
 
-    Florecita f2 = new Florecita ("azul", 100);
+    Florecita f2 = new Florecita("azul", 100);
     System.out.println(f2.getColor());
     System.out.println(f2.getCantidadDePetalos());
-
   }
 }
