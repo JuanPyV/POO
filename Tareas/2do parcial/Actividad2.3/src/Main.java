@@ -8,6 +8,7 @@ public class Main {
 		huawei.writeCode();
 
 		Computer asus = huawei;
+		asus.writeCode();
 		asus.sendMail();
 		asus.sendMail(asus.getScreen());
 		asus.sendMail(asus.getStorage());

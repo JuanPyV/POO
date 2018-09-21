@@ -8,6 +8,7 @@ public class Mobile extends Computer {
 
 	@Override
 	public void sendMail() {
+		super.sendMail();
 		System.out.println("El mail es enviado desde el movil ");
 
 	}
