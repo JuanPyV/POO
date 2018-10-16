@@ -1,12 +1,15 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import javax.swing.*;
 
-public class Ventana extends JFrame implements ActionListener {
+public class Bloc extends JFrame implements ActionListener {
 
 	private JTextArea area;
 	private JFileChooser chooser;
@@ -20,7 +23,7 @@ public class Ventana extends JFrame implements ActionListener {
 	// items
 	private JMenuItem item1, item2, item3;
 	
-	public Ventana(){
+	public Bloc(){
 		super("EDITOR");
 		setSize(400,400);
 		setLocation(200, 200);
@@ -55,7 +58,6 @@ public class Ventana extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("PRESIONADO!");
 		if(e.getSource() == item1) {
 			
 			int resultado = chooser.showSaveDialog(this);
@@ -76,7 +78,24 @@ public class Ventana extends JFrame implements ActionListener {
 			int resultado = chooser.showOpenDialog(this);
 			
 			if(resultado == JFileChooser.APPROVE_OPTION) {
-				System.out.println(chooser.getSelectedFile().getPath());
+				File y = chooser.getSelectedFile();
+				BufferedReader tecsto;
+				area.setText("");
+				
+				try {
+					tecsto = new BufferedReader(new FileReader(y));
+					String linea = tecsto.readLine();
+					while(linea != null) {
+						area.append(linea + "\n");
+						linea = tecsto.readLine();
+					}
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}
