@@ -1,8 +1,5 @@
 import javax.swing.*;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
-
-import sun.font.CCompositeGlyphMapper;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
