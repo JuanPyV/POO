@@ -7,11 +7,11 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import figuras.increibles.*;
 
-public class AreaDibujo extends JPanel implements MouseListener {
+public class AreaDibujo extends JPanel implements MouseListener{
 	
 	private ConfiguradorDibujo config;
 	private Figura[] figuras;
-	private int x,y;
+	private int x,y, c = 0;
 
 	public AreaDibujo(ConfiguradorDibujo config) {
 		
@@ -31,14 +31,23 @@ public class AreaDibujo extends JPanel implements MouseListener {
 		
 			case ConfiguradorDibujo.CIRCULO:
 				g.drawOval(x, y, 100, 100);
+				Figura circulo = new Figura(x, y, config.getFigura(), config.getColor());
+				figuras[c] = circulo; 
+				c += 1;
 				break;
 			
 			case ConfiguradorDibujo.RECTANGULO:
 				g.drawRect(x, y, 100, 100);
+				Figura rectangulo = new Figura(x, y, config.getFigura(), config.getColor());
+				figuras[c] = rectangulo; 
+				c += 1;
 				break;
 			
 			case ConfiguradorDibujo.TEXTO:
 				g.drawString("salu2", x, y);
+				Figura texto = new Figura(x, y, config.getFigura(), config.getColor());
+				figuras[c] = texto; 
+				c += 1;
 				break;
 		}
 		
@@ -51,6 +60,10 @@ public class AreaDibujo extends JPanel implements MouseListener {
 		x = e.getX();
 		y = e.getY();
 		repaint();
+	}
+	
+	public String datos() {
+		return figuras[c-1].toString();
 	}
 
 	@Override

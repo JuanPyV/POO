@@ -13,7 +13,7 @@ public class Ventana extends JFrame {
 	private AreaDibujo areaDibujo;
 	
 	public Ventana() {
-		super("PAINT");
+		super("PAINT 2");
 		setSize(800,800);
 		setLocation(200,200);
 		

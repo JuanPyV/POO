@@ -8,7 +8,7 @@ public class PanelBotones extends JPanel implements ConfiguradorDibujo {
 
 	private JButton circulo, rectangulo, texto, seleccionador;
 	private JTextField tipoGuardado;
-	private Color colorin;
+	private Color colorin = Color.black;
 	private int figura;
 	
 	public PanelBotones() {
