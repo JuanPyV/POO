@@ -8,7 +8,7 @@ public class Repaso1 {
     - Clases
     - Objetos
     - Constructores
-    - atributos
+    - atributos[
     - métodos
     - modificadores de acceso (private, public, protected)
     - Herencia
